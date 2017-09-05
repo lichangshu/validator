@@ -178,10 +178,11 @@
                 else if( data.lengthRange && data.lengthRange[1] && a.length > data.lengthRange[1] ){
                     return this.texts.long;
                 }
-                else if( data.minmax[0] && (a|0) < data.minmax[0] ){
+                var af = parseFloat(a);
+                if( data.minmax[0] && af < data.minmax[0] ){
                     return this.texts.number_min;
                 }
-                else if( data.minmax[1] && (a|0) > data.minmax[1] ){
+                else if( data.minmax[1] && af > data.minmax[1] ){
                     return this.texts.number_max;
                 }
 
